@@ -7,11 +7,14 @@
   font-family: "Poppins";
 }
 :root {
-  --bg-color: #080808;
-  --second-bg-color: #101010;
-  --text-color: white;
-  --main-color: #ea580c;
+  --bg-color: #0f172a;        /* dark slate */
+  --second-bg-color: #020617; /* deeper section background */
+  --text-color: #e5e7eb;      /* soft white */
+  --muted-text: #9ca3af;      /* secondary text */
+  --main-color: #38bdf8;      /* soft blue accent */
+  --border-color: #1e293b;
 }
+
 html {
   font-size: 60%;
   overflow-x: hidden;
