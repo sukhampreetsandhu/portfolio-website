@@ -6,13 +6,11 @@
   scroll-behavior: smooth;
   font-family: "Poppins";
 }
-:root {
-  --bg-color: #0f172a;        /* dark slate */
-  --second-bg-color: #020617; /* deeper section background */
-  --text-color: #e5e7eb;      /* soft white */
-  --muted-text: #9ca3af;      /* secondary text */
-  --main-color: #38bdf8;      /* soft blue accent */
-  --border-color: #1e293b;
+:root { 
+    --bg-color: #080808; 
+    --second-bg-color: #101010; 
+    --text-color: white; 
+    --main-color: #ea580c; 
 }
 
 html {
@@ -43,4 +41,20 @@ body {
     font-size: 3.Srem;
     color: var(--main-color);
     display:none;
+}
+
+.logo{
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+span{
+    background: linear-gradient(270deg, #Df8908 10%, #ff1d15 100%);
 }
