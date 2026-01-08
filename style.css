@@ -63,7 +63,7 @@ span{
 
 .navbar a{
     font-size: 1.8rem;
-    color: view(--text-color);
+    color: var(--text-color);
     margin-left: 4rem;
     font-weight: 500;
     transition: 0.3s ease-in-out;
