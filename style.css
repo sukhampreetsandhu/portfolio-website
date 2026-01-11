@@ -285,6 +285,16 @@ section{
 }
 
 .project-card img{
-    max-width: 300px
+    max-width: 300px;
+    border-radius: 2em;
+    object-fit: cover;
+}
+
+.project-card h3{
+    font-size: 3rem;
+}
+
+.project-caard p{
+    font-size: 1.6rem;
 }
 
