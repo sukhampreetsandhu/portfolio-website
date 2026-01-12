@@ -125,9 +125,9 @@ section{
     line-height: 1;
 }
 
-.home-content h3{
+.home-content h2{
     margin: 3rem 0;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .home-content p{
@@ -146,6 +146,13 @@ section{
 
 .home-img img:hover{
     box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color), 0 0 100px var(--main-color);
+}
+
+.tagline {
+    font-size: 2rem;
+    font-weight:500;
+    color: #b0b0b0;
+    line-height: 2;
 }
 
 .social-icons a{
@@ -214,17 +221,6 @@ section{
     background: var(--second-bg-color);
 }
 
-.about-img img{
-    width: 32vw;
-    border-radius: 50%;
-    box-shadow: 0 0 25px var(--main-color);
-    transition: 0.4s ease-in-out;
-    
-}
-
-.about-img img:hover{
-    box-shadow: 0 0 25px var(--main-color),0 0 50px var(--main-color),0 0 100px var(--main-color);
-}
 
 .about-content h2{
     font-size: 7rem;
@@ -235,9 +231,6 @@ section{
     font-size: 1.8rem;
 }
 
-.about-content .btn{
-    margin: 3rem 0;
-}
 
 .experience-container {
     display: flex;
