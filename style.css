@@ -101,7 +101,7 @@ span {
 }
 
 section{
-    min-height: 100vh;
+    min-height: 80vh;
     padding: 10rem 15%;
 }
 
@@ -109,7 +109,7 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15rem;
+    gap: 10rem;
 }
 .home-content{
     display: flex;
@@ -136,10 +136,11 @@ section{
     line-height: 1.8;
 }
 
-.home-img img{
-    width: 32vw;
+.home-img img {
+    width: 40vw;
+    max-width: 400px;
     border-radius: 50%;
-    box-shadow: 0 0 25px var(--main-color);
+    box-shadow: 0 0 18px var(--main-color);
     transition: 0.4s ease-in-out;
 }
 
@@ -385,9 +386,10 @@ section{
 }
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 5rem;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 1rem;
     align-items: center;
+    padding-left:3rem;
 }
 
 .contact-info {
@@ -400,7 +402,7 @@ section{
     display: flex;
     align-items: center;
     gap: 2rem;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
 }
 
 .contact-item i {
@@ -489,10 +491,10 @@ section{
         text-align: center;
     }
 
-    .home-img img{
+    .home-img img {
         width: 56vw;
+        max-width: 300px;
     }
-
     .about{
         flex-direction: column-reverse;
         text-align: center;
