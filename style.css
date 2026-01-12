@@ -230,7 +230,7 @@ section{
 }
 
 .about-content p{
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 .tech-tags {
@@ -292,6 +292,10 @@ section{
     font-size: 3rem;
     margin-bottom: 1rem;
 }
+.experience-card li{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
 
 .experience-card span {
     font-weight: 400;
@@ -327,7 +331,7 @@ section{
 
 .heading{
     text-align: center;
-    font-size: 7rem;
+    font-size: 5rem;
     margin:5rem 0;
 }
 
@@ -473,6 +477,10 @@ section{
         grid-template-columns: 1fr;
         text-align: center;
     }
+        .header {
+            padding: 1.5rem 6%;
+            background: rgba(0, 0, 0, 0.75);
+        }
 
     .contact-item {
         justify-content: center;
@@ -487,6 +495,7 @@ section{
     /* -------------------- HEADER -------------------- */
     #menu-icon {
         display: block;
+        margin-left: auto;
     }
 
     .navbar {
@@ -555,9 +564,9 @@ section{
     /* -------------------- ABOUT -------------------- */
     .about {
         flex-direction: column-reverse;
-        text-align: center;
+        text-align: rigth;
         gap: 2rem;
-        padding: 3rem 2rem;
+        padding: 3rem 10% 2rem;
     }
 
     .about-content h2 {
