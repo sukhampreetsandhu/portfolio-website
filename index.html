@@ -1,258 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Website</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sukhampreet Sandhu — Software Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="script.js"></script>
 
-     <header class="header">
+<body>
+  <!-- Terminal-style header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="#home" class="logo">
+        <span class="terminal-prompt">~/</span>Sukhampreet
+      </a>
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-        <a href="#home" class="logo">
-            Sukhampreet<span> Sandhu</Span></a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class='bx bx-moon' id="themeIcon"></i>
+      </button>
+    </div>
+    <div class="header-line"></div>
+  </header>
 
-        <i class="bx bx-menu" id="menu-icon"></i>
-
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <a href="#contact" class="contact-btn">
-          <button class="gradient-btn">Contact Me</button>
-        </a>
-    </header>
-
-    <section class="home" id="home">
-      <div class="home-content">
-        <h1>Hi, I'm <span>Sukhampreet</span></h1>
-        <h2>
-          I'm a <span>third-year Computer Science</span> student at the 
-          University of Guelph<br>
-          Actively seeking 2026 Summer internship opportunities.
-        </h2>
-        <p class="tagline">
-          <span>Building clean, reliable software with a strong foundation in systems and testing</span>
-        </p>
-
-        <div class="social-icons">
-          <!-- github icon -->
-          <a href="https://github.com/sukhampreetsandhu" target="_blank" rel="noopener norferrer">
-            <i class="bx bxl-github">
-            </i>
-          </a>
-          <!-- This is for linkdin logo-->
-          <a href="https://www.linkedin.com/in/sukhampreetsandhu/" target="_blank" rel="noopener norferrer">
-            <i class="bx bxl-linkedin-square">
-            </i>
-          </a>
-        </div>
-        <div class="btn-group">
-          <a href="#contact"
-          class="btn">Contact</a>
-        </div>
-      </div>
-
-      <div class="home-img">
-        <img src="images/my.jpg" alt="a person's image">
-
-      </div>
-    </section>
-    <section class="about" id="about">
-      <div class="about-content">
-        <h2 class="heading">About<span>Me</span></h2>
-        <p>
-          I am a third-year Computer Science student at the University of Guelph,
-          pursuing a Bachelor of Computing with a minor in Business Data Analytics,
-          with an expected graduation in April 2028. I am interested in software
-          engineering and enjoy building clean, reliable, and maintainable systems.
-          <br><br>
-          Through industry and academic experience, I have developed a strong
-          appreciation for software quality, testing, and clear system design.
-          Working in quality assurance on enterprise-scale software exposed me to
-          real-world development workflows and reinforced the importance of building
-          robust, well-tested applications.
-          <br><br>
-          As a Teaching Assistant, I strengthened my fundamentals in programming,
-          data structures, and debugging while developing the ability to explain
-          complex concepts clearly and provide constructive technical feedback. <br><br>
-          Outside of coursework, I build personal projects in Java and JavaFX to
-          explore object-oriented design, optimized data structures, and user
-          interface development. I enjoy learning new tools and continuously
-          improving how software is designed, tested, and maintained.
-        </p>
-        <div class="tech-tags">
-          <span>C</span>
-          <span>Java</span>
-          <span>JavaFX</span>
-          <span>HTML/CSS</span>
-          <span>JavaFX</span>
-          <span>Python</span>
-          <span>JavaScript</span>
-          <span>Docker</span>
-          <span>Git</span>
-          <span>Linux</span>
-          <span>Azure</span>
-        </div>
-      </div>
-    </section>
-    <section class="experience" id="experience">
-      <h2 class="heading">Experi<span>ence</span></h2>
-
-      <div class="experience-container">
-    
-        <div class="experience-card">
-          <h3>Quality Assurance Intern <span>| Camis Inc, Guelph</span></h3>
-          <p class="experience-date">Sept 2025 – Dec 2025</p>
-        <ul>
-          <li>Executed manual and exploratory testing on enterprise-scale
-            reservation and park management software used by 1,300+ clients.</li>
-          <li>Designed and maintained detailed test cases, reproduced defects,
-            and verified fixes in collaboration with developers.</li>
-          <li>Worked with Jira and Confluence to track issues, document test
-            results, and support stable feature releases.</li>
-        </ul>
-        </div>
-        <div class="experience-card">
-          <h3>Teaching Assistant <span>| University of Guelph</span></h3>
-          <p class="experience-date">Sept 2024 – Present</p>
-          <ul>
-          <li>
-            Supported 500+ students across introductory and intermediate programming courses by mentoring during labs and office
-            hours, clarifying complex programming concepts, reviewing assignments for logic and edge cases, and delivering clear,
-            actionable technical feedback.
-          </li>
-          </ul>
-          <div class="tech-tags">
-            <span>C</span><span>Python</span><span>Git</span>
-        </div>
-      </div>
-    </section>
-    
-    <section class="projects" id="projects">
-      <h2 class="heading">
-        Projects
-      </h2>
-      <div class="projects-box">
-        <div class="project-card">
-          <img src="images/discussionBoard.png" alt="project1 img">
-          <h3>Smart DisussionBoard</h3>
-          <p>
-            Designed and implemented a Java discussion board using object-oriented
-            principles, supporting multiple post types, efficient keyword-based
-            search, and a JavaFX GUI for interactive user workflows.
-          </p>
-          <div class="tech-tags">
-            <span>Java</span><span>OOP</span><span>JavaFX</span>
+  <!-- Landing Page -->
+  <section class="home" id="home">
+    <div class="section-content">
+      <div class="home-grid">
+        <div class="home-content">
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            Available for 2026 Summer Internships
           </div>
-          <a href="https://github.com/sukhampreetsandhu/SmartDiscussionBoard" class="btn" target="_blank"
-            rel="noopener noreferrer">
-            View Project
-          </a>
-        </div>
-        <div class="project-card">
-          <img src="images/invmanager.png" alt="project2 img">
-          <h3>Investment Manager</h3>
-          <p>
-            Java ePortfolio app implementing OOP principles to manage stocks and mutual funds.
-            Features include buy/sell functionality, price updates, keyword-based search, and total gain calculation.</p>
-            <div class="tech-tags">
-              <span>Java</span><span>OOP</span><span>GUI</span>
+
+          <h1 class="glitch-text" data-text="Sukhampreet Sandhu">
+            Sukhampreet Sandhu
+          </h1>
+
+          <div class="typing-container">
+            <p class="subtitle">
+              <span class="code-bracket">&lt;</span>Third-year Computer Science Student<span
+                class="code-bracket">/&gt;</span>
+            </p>
+            <p class="tagline">
+              Building clean, reliable software with a strong foundation in systems and testing
+            </p>
+          </div>
+
+          <div class="cta-group">
+            <a href="#contact" class="btn-primary">
+              <span>Get in touch</span>
+              <i class='bx bx-right-arrow-alt'></i>
+            </a>
+            <div class="social-links">
+              <a href="https://github.com/sukhampreetsandhu" target="_blank" rel="noopener noreferrer"
+                class="social-link" aria-label="GitHub">
+                <i class="bx bxl-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/sukhampreetsandhu/" target="_blank" rel="noopener noreferrer"
+                class="social-link" aria-label="LinkedIn">
+                <i class="bx bxl-linkedin-square"></i>
+              </a>
             </div>
-          <a href="https://github.com/sukhampreetsandhu/InvestmentManager" class="btn" target="_blank"
-            rel="noopener noreferrer">
-            View Project
-          </a>
+          </div>
         </div>
-        <div class="project-card">
-          <img src="images/RentACar.png" alt="project3 img">
-          <h3>RentACar</h3>
+
+        <div class="home-visual">
+          <div class="code-window">
+            <div class="window-header">
+              <div class="window-controls">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="window-title">developer.profile</div>
+            </div>
+            <div class="window-content">
+              <pre><code><span class="code-keyword">const</span> <span class="code-var">developer</span> = {
+  <span class="code-property">name</span>: <span class="code-string">"Sukhampreet Sandhu"</span>,
+  <span class="code-property">university</span>: <span class="code-string">"University of Guelph"</span>,
+  <span class="code-property">focus</span>: [
+    <span class="code-string">"Software Engineering"</span>,
+    <span class="code-string">"Quality Assurance"</span>,
+    <span class="code-string">"System Design"</span>
+  ],
+  <span class="code-property">seeking</span>: <span class="code-string">"2026 Summer Internship"</span>
+};</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="section-content">
+      <div class="section-header">
+        <span class="section-number">01.</span>
+        <h2>About Me</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-container">
+
+        <div class="about-text">
           <p>
-          Academic C project implementing a car rental system.
-          Manages cars across available, rented, and repair categories using linked lists, structs, and pointers.
+            Hi there! I am a 3rd-year Computer Science student here at the University of Guelph, pursuing a Bachelor's degree in
+            Computer Science, along with a minor in Business Data Analytics. Currently, I am looking for a co-op work term in the
+            summer of 2026.
           </p>
-          <div class="tech-tags">
-            <span>C</span><span>LLS</span>
+          <p>
+            I enjoy building systems that are both efficient and practical. Whether it’s designing object-oriented applications in
+            Java, working with data structures, or exploring low-level concepts like memory management in C, I’m drawn to challenges
+            that deepen my understanding of how software works under the hood..
+          </p>
+          <p>
+            As a teaching assistant for programming courses in C and Python, I strengthened my fundamentals in programming and
+            debugging, while developing the ability to explain complex concepts clearly and provide constructive technical feedback
+            to others. Helping students solve problems has also sharpened my communication and leadership skills.
+          </p>
+          <p>
+            I am interested, but not limited to, backend development and systems-level programming, and I’m always looking for
+            opportunities to deepen my understanding of how software works under the hood while contributing to meaningful projects.
+          </p>
+
+          <button class="view-full-stack-btn" id="viewFullStackBtn">
+            <i class='bx bx-code-block'></i>
+            <span>View Full Tech Stack</span>
+          </button>
+        </div>
+
+        <div class="about-sidebar">
+          <div class="skills-highlights">
+            <h3>Core Skills</h3>
+            <div class="skill-group">
+              <h4>Languages</h4>
+              <p>Java, C, Python, HTML/CSS, JavaScript</p>
+            </div>
+            <div class="skill-group">
+              <h4>Tools & Platforms</h4>
+              <p>Git, Linux, Docker, Cloudflare, Render</p>
+            </div>
+            <div class="skill-group">
+              <h4>Concepts</h4>
+              <p>OOP, Data Structures, Memory Management, Algorithmic Problem Solving</p>
+            </div>
+            <div class="skill-group">
+              <h4>Quality Assurance</h4>
+              <p>Regression Testing, Jira, Confluence, Test Case Design</p>
+            </div>
           </div>
-          <a href="https://github.com/sukhampreetsandhu/CarRentalManager" class="btn" target="_blank" rel="noopener noreferrer">
-            View Project
-          </a>
+
+          <div class="work-terms">
+            <h3>Co-op Work Terms</h3>
+            <div class="work-term-item">
+              <div class="term-badge">1</div>
+              <div class="term-info">
+                <h4>Quality Assurance Intern</h4>
+                <p>Camis Inc • Fall 2025</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="contact" id="contact">
-      <h2 class="heading">Contact <span>Me</span></h2>
-    
+  <!-- Full Tech Stack Modal -->
+  <div class="modal" id="techStackModal">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Full Tech Stack</h3>
+        <button class="modal-close" id="modalClose">
+          <i class='bx bx-x'></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="tech-stack-grid-modal">
+          <div class="tech-category-modal">
+            <h4>Languages</h4>
+            <div class="tech-list">
+              <span>C</span>
+              <span>Java</span>
+              <span>Python</span>
+              <span>JavaScript</span>
+              <span>HTML/CSS</span>
+            </div>
+          </div>
+          <div class="tech-category-modal">
+            <h4>Frameworks & Libraries</h4>
+            <div class="tech-list">
+              <span>JavaFX</span>
+              <span>check</span>
+              <span>Spring Boot</span>
+            </div>
+          </div>
+          <div class="tech-category-modal">
+            <h4>Tools & Platforms</h4>
+            <div class="tech-list">
+              <span>Git/GitHub/GitLab</span>
+              <span>Docker</span>
+              <span>Linux</span>
+              <span>Cloudflare</span>
+              <span>Render</span>
+              <span>VS Code</span>
+              <span>IntelliJ IDEA</span>
+              <span>Azure</span>
+            </div>
+          </div>
+          <div class="tech-category-modal">
+            <h4>Testing & QA</h4>
+            <div class="tech-list">
+              <span>Jira</span>
+              <span>Confluence</span>
+              <span>Regression Testing</span>
+              <span>Test Case Design</span>
+              <span>Bug Tracking</span>
+            </div>
+          </div>
+          <div class="tech-category-modal">
+            <h4>Database & Data</h4>
+            <div class="tech-list">
+              <span>Firebase</span>
+              <span>SQL</span>
+            </div>
+          </div>
+          <div class="tech-category-modal">
+            <h4>Concepts & Practices</h4>
+            <div class="tech-list">
+              <span>OOP</span>
+              <span>Data Structures</span>
+              <span>Algorithms</span>
+              <span>Software Testing</span>
+              <span>Version Control</span>
+              <span>Agile Methodologies</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Experience Section -->
+  <section class="experience" id="experience">
+    <div class="section-content">
+      <div class="section-header">
+        <span class="section-number">02.</span>
+        <h2>Experience</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="experience-card">
+            <div class="card-header">
+              <div>
+                <h3>Quality Assurance Intern</h3>
+                <p class="company">Camis Inc, Guelph</p>
+              </div>
+              <span class="date">Sept 2025 – Dec 2025</span>
+            </div>
+            <ul class="responsibilities">
+              <li>Executed manual and exploratory testing on enterprise-scale reservation and park management software
+                used by 1,300+ clients.</li>
+              <li>Designed and maintained detailed test cases, reproduced defects, and verified fixes in collaboration
+                with developers.</li>
+              <li>Worked with Jira and Confluence to track issues, document test results, and support stable feature
+                releases.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="experience-card">
+            <div class="card-header">
+              <div>
+                <h3>Teaching Assistant</h3>
+                <p class="company">University of Guelph</p>
+              </div>
+              <span class="date">Sept 2024 – Present</span>
+            </div>
+            <ul class="responsibilities">
+              <li>Supported 500+ students across introductory and intermediate programming courses by mentoring during
+                labs and office hours, clarifying complex programming concepts, reviewing assignments for logic and edge
+                cases, and delivering clear, actionable technical feedback.</li>
+            </ul>
+            <div class="tech-tags">
+              <span>C</span>
+              <span>Python</span>
+              <span>Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="section-content">
+      <div class="section-header">
+        <span class="section-number">03.</span>
+        <h2>Projects</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/discussionboard-web.png" alt="Smart Discussion Board">
+            <div class="project-overlay">
+              <a href="https://github.com/sukhampreetsandhu/discussionBoard-web" class="project-link" target="_blank"
+                rel="noopener noreferrer">
+                <i class='bx bx-link-external'></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Smart Discussion Board</h3>
+            <p>Designed and implemented a Java discussion board using object-oriented principles, supporting multiple
+              post
+              types, efficient keyword-based search, and a JavaFX GUI for interactive user workflows.</p>
+            <div class="project-tech">
+              <span>Java</span>
+              <span>Spring Boot</span>
+              <span>HTML</span>
+              <span>Render</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/invmanager.png" alt="Investment Manager">
+            <div class="project-overlay">
+              <a href="https://github.com/sukhampreetsandhu/InvestmentManager" class="project-link" target="_blank"
+                rel="noopener noreferrer">
+                <i class='bx bx-link-external'></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Investment Manager</h3>
+            <p>Java ePortfolio app implementing OOP principles to manage stocks and mutual funds. Features include
+              buy/sell functionality, price updates, keyword-based search, and total gain calculation.</p>
+            <div class="project-tech">
+              <span>Java</span>
+              <span>OOP</span>
+              <span>GUI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/RentACar.png" alt="RentACar">
+            <div class="project-overlay">
+              <a href="https://github.com/sukhampreetsandhu/CarRentalManager" class="project-link" target="_blank"
+                rel="noopener noreferrer">
+                <i class='bx bx-link-external'></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>RentACar</h3>
+            <p>Academic C project implementing a car rental system. Manages cars across available, rented, and repair
+              categories using linked lists, structs, and pointers.</p>
+            <div class="project-tech">
+              <span>C</span>
+              <span>Data Structures</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/toDoWeb.png" alt="ToDo Web Application">
+            <div class="project-overlay">
+              <a href="https://github.com/sukhampreetsandhu/ToDo-WebApplication" class="project-link" target="_blank"
+                rel="noopener noreferrer">
+                <i class='bx bx-link-external'></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>ToDo Web Application</h3>
+            <p>Created a to-do list web application enabling users to manage tasks with Google sign-in and real-time
+              updates, leveraging Firebase Authentication and Realtime Database, deployed via GitHub Pages.</p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Firebase</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="section-content">
+      <div class="section-header">
+        <span class="section-number">04.</span>
+        <h2>Get In Touch</h2>
+        <div class="section-line"></div>
+      </div>
+
       <div class="contact-container">
-    
-        <!-- LEFT SIDE: CONTACT INFO -->
         <div class="contact-info">
-    
-          <div class="contact-item">
-            <i class="bx bx-envelope"></i>
-            <p>ssandhu6june@gmail.com</p>
-          </div>
-    
-          <div class="contact-item">
-            <i class="bx bx-phone"></i>
-            <p>+1 (226) 606-8636</p>
-          </div>
-    
-          <div class="contact-item">
-            <i class="bx bxl-github"></i>
-            <a href="https://github.com/sukhampreetsandhu" target="_blank">GitHub</a>
-          </div>
-    
-          <div class="contact-item">
-            <i class="bx bxl-linkedin-square"></i>
-            <a href="https://www.linkedin.com/in/sukhampreetsandhu/" target="_blank">LinkedIn</a>
-          </div>
-    
-        </div>
-    
-        <!-- RIGHT SIDE: FORM -->
-        <form id="contact-form">
-    
-          <div class="input-box">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-          </div>
-          <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
-    
-          <input type="submit" value="Send Message" class="btn">
-        </form>
-    
-      </div>
-    </section>
+          <p class="contact-intro">
+            I'm currently seeking 2026 summer internship opportunities. Whether you have a question or just want to
+            connect, feel free to reach out!
+          </p>
 
-    <footer class="footer">
-      <div class="social-icons">
-        <!-- github icon -->
-        <a href="https://github.com/sukhampreetsandhu" target="_blank" rel="noopener norferrer">
-          <i class="bx bxl-github">
-          </i>
+          <div class="contact-methods">
+            <a href="/cdn-cgi/l/email-protection#e09393818e848895d68a958e85a0878d81898cce838f8d" class="contact-item">
+              <i class="bx bx-envelope"></i>
+              <div>
+                <span class="label">Email</span>
+                <span class="value"><span class="__cf_email__"
+                    data-cfemail="98ebebf9f6fcf0edaef2edf6fdd8fff5f9f1f4b6fbf7f5">[email&#160;protected]</span></span>
+              </div>
+            </a>
+
+            <a href="tel:+12266068636" class="contact-item">
+              <i class="bx bx-phone"></i>
+              <div>
+                <span class="label">Phone</span>
+                <span class="value">+1 (226) 606-8636</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/sukhampreetsandhu" target="_blank" class="contact-item">
+              <i class="bx bxl-github"></i>
+              <div>
+                <span class="label">GitHub</span>
+                <span class="value">@sukhampreetsandhu</span>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/sukhampreetsandhu/" target="_blank" class="contact-item">
+              <i class="bx bxl-linkedin-square"></i>
+              <div>
+                <span class="label">LinkedIn</span>
+                <span class="value">sukhampreetsandhu</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your message..." rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            <span>Send Message</span>
+            <i class='bx bx-send'></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-text">
+        Built by Sukhampreet Sandhu
+      </p>
+      <div class="footer-links">
+        <a href="https://github.com/sukhampreetsandhu" target="_blank" rel="noopener noreferrer">
+          <i class="bx bxl-github"></i>
         </a>
-        <!-- This is for linkdin logo-->
-        <a href="https://www.linkedin.com/in/sukhampreetsandhu/" target="_blank" rel="noopener norferrer">
-        <i class="bx bxl-linkedin-square">
-        </i>
+        <a href="https://www.linkedin.com/in/sukhampreetsandhu/" target="_blank" rel="noopener noreferrer">
+          <i class="bx bxl-linkedin-square"></i>
         </a>
       </div>
-      <p class="copyright">
-        2026 © Sukhampreet Sandhu | All Rights Reserved
-      </p>
-    </footer>
-      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-      <script src="script.js"></script>
-  </body>
-</html>
+    </div>
+    <p class="copyright">© 2026 All Rights Reserved</p>
+  </footer>
