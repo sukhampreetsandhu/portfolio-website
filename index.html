@@ -8,6 +8,9 @@
   <meta name="theme-color" content="#2563eb" />
   <meta property="og:title" content="Sukhampreet Sandhu" />
   <meta property="og:description" content="CS student and software developer building reliable software with a focus on systems, testing, and quality." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.sukhampreetsandhu.com/" />
+  <link rel="canonical" href="https://www.sukhampreetsandhu.com/" />
   <title>Sukhampreet Sandhu — CS Student & Software Developer</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -17,8 +20,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
-<script defer src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script defer src="script.js"></script>
 
 <body>
   <!-- Terminal-style header -->
@@ -27,8 +28,10 @@
       <a href="#home" class="logo">
         <span class="terminal-prompt">~/</span>Sukhampreet
       </a>
-      <i class="bx bx-menu" id="menu-icon"></i>
-      <nav class="navbar">
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+        <i class="bx bx-menu" id="menu-icon" aria-hidden="true"></i>
+      </button>
+      <nav class="navbar" id="primary-navigation" aria-label="Primary navigation">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
@@ -36,13 +39,14 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
         <i class='bx bx-moon' id="themeIcon"></i>
       </button>
     </div>
     <div class="header-line"></div>
   </header>
 
+  <main>
   <!-- Landing Page -->
   <section class="home" id="home">
     <div class="section-content">
@@ -75,11 +79,11 @@
             <div class="social-links">
               <a href="https://github.com/sukhampreetsandhu" target="_blank" rel="noopener noreferrer"
                 class="social-link" aria-label="GitHub">
-                <i class="bx bxl-github"></i>
+                <i class="bx bxl-github" aria-hidden="true"></i>
               </a>
               <a href="https://www.linkedin.com/in/sukhampreetsandhu/" target="_blank" rel="noopener noreferrer"
                 class="social-link" aria-label="LinkedIn">
-                <i class="bx bxl-linkedin-square"></i>
+                <i class="bx bxl-linkedin-square" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -143,7 +147,7 @@
             to apply these skills on meaningful, real-world projects.
           </p>
 
-          <button class="view-full-stack-btn" id="viewFullStackBtn">
+          <button class="view-full-stack-btn" id="viewFullStackBtn" type="button">
             <i class='bx bx-code-block'></i>
             <span>View Full Tech Stack</span>
           </button>
@@ -193,13 +197,13 @@
   </section>
 
   <!-- Full Tech Stack Modal -->
-  <div class="modal" id="techStackModal">
+  <div class="modal" id="techStackModal" aria-hidden="true">
     <div class="modal-overlay" id="modalOverlay"></div>
-    <div class="modal-content">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="techStackTitle" tabindex="-1">
       <div class="modal-header">
-        <h3>Full Tech Stack</h3>
-        <button class="modal-close" id="modalClose">
-          <i class='bx bx-x'></i>
+        <h3 id="techStackTitle">Full Tech Stack</h3>
+        <button class="modal-close" id="modalClose" type="button" aria-label="Close full tech stack dialog">
+          <i class='bx bx-x' aria-hidden="true"></i>
         </button>
       </div>
       <div class="modal-body">
@@ -386,10 +390,10 @@
         
         <div class="project-card">
           <div class="project-image">
-            <img src="images/server.png" alt="Home Server">
+            <img src="images/server.png" alt="Home Server" loading="lazy" decoding="async">
             <div class="project-overlay">
               <a href="#" class="project-link" aria-label="Home Server project">
-                <i class='bx bx-link-external'></i>
+                <i class='bx bx-link-external' aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -408,10 +412,10 @@
 
         <div class="project-card">
           <div class="project-image">
-            <img src="images/stock.png" alt="Home Page of Stock Reaction Predictor">
+            <img src="images/stock.png" alt="Home Page of Stock Reaction Predictor" loading="lazy" decoding="async">
             <div class="project-overlay">
               <a href="#" class="project-link" aria-label="Home Server project">
-                <i class='bx bx-link-external'></i>
+                <i class='bx bx-link-external' aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -427,7 +431,7 @@
             <div class="project-overlay">
               <a href="https://github.com/Luiza-s-classes/project-setup-group-9-cloud-9" class="project-link" target="_blank"
                 rel="noopener noreferrer" aria-label="Stock Reaction Predictor GitHub">
-                <i class='bx bx-link-external'></i>
+                <i class='bx bx-link-external' aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -435,10 +439,10 @@
 
         <div class="project-card">
           <div class="project-image">
-            <img src="images/discussionboard-web.png" alt="Smart Discussion Board">
+            <img src="images/discussionboard-web.png" alt="Smart Discussion Board" loading="lazy" decoding="async">
             <div class="project-overlay">
               <a href="https://github.com/sukhampreetsandhu/discussionBoard-web" class="project-link" target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer" aria-label="Smart Discussion Board GitHub">
                 <i class='bx bx-link-external'></i>
               </a>
             </div>
@@ -459,10 +463,10 @@
 
         <div class="project-card">
           <div class="project-image">
-            <img src="images/invmanager.png" alt="Investment Manager">
+            <img src="images/invmanager.png" alt="Investment Manager" loading="lazy" decoding="async">
             <div class="project-overlay">
               <a href="https://github.com/sukhampreetsandhu/InvestmentManager" class="project-link" target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer" aria-label="Investment Manager GitHub">
                 <i class='bx bx-link-external'></i>
               </a>
             </div>
@@ -481,10 +485,10 @@
 
         <div class="project-card">
           <div class="project-image">
-            <img src="images/RentACar.png" alt="RentACar">
+            <img src="images/RentACar.png" alt="RentACar" loading="lazy" decoding="async">
             <div class="project-overlay">
               <a href="https://github.com/sukhampreetsandhu/CarRentalManager" class="project-link" target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer" aria-label="RentACar GitHub">
                 <i class='bx bx-link-external'></i>
               </a>
             </div>
@@ -501,10 +505,10 @@
         </div>
         <div class="project-card">
           <div class="project-image">
-            <img src="images/mmegmt.jpg" alt="MemoryManager">
+            <img src="images/mmegmt.jpg" alt="MemoryManager" loading="lazy" decoding="async">
             <div class="project-overlay">
               <a href="https://github.com/sukhampreetsandhu/memoryAllocator" class="project-link" target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer" aria-label="Memory Manager GitHub">
                 <i class='bx bx-link-external'></i>
               </a>
             </div>
@@ -523,10 +527,10 @@
 
         <div class="project-card">
           <div class="project-image">
-            <img src="images/knn.png" alt="Animal Bio ML">
+            <img src="images/knn.png" alt="Animal Bio ML" loading="lazy" decoding="async">
             <div class="project-overlay">
               <a href="https://github.com/sukhampreetsandhu/AnimalBioML" class="project-link" target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer" aria-label="Animal Bio ML GitHub">
                 <i class='bx bx-link-external'></i>
               </a>
             </div>
@@ -545,10 +549,10 @@
 
         <div class="project-card">
           <div class="project-image">
-            <img src="images/toDoWeb.png" alt="ToDo Web Application">
+            <img src="images/toDoWeb.png" alt="ToDo Web Application" loading="lazy" decoding="async">
             <div class="project-overlay">
               <a href="https://github.com/sukhampreetsandhu/ToDo-WebApplication" class="project-link" target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer" aria-label="ToDo Web Application GitHub">
                 <i class='bx bx-link-external'></i>
               </a>
             </div>
@@ -603,7 +607,7 @@
               </div>
             </a>
 
-            <a href="https://github.com/sukhampreetsandhu" target="_blank" class="contact-item">
+            <a href="https://github.com/sukhampreetsandhu" target="_blank" rel="noopener noreferrer" class="contact-item">
               <i class="bx bxl-github"></i>
               <div>
                 <span class="label">GitHub</span>
@@ -611,7 +615,7 @@
               </div>
             </a>
 
-            <a href="https://www.linkedin.com/in/sukhampreetsandhu/" target="_blank" class="contact-item">
+            <a href="https://www.linkedin.com/in/sukhampreetsandhu/" target="_blank" rel="noopener noreferrer" class="contact-item">
               <i class="bx bxl-linkedin-square"></i>
               <div>
                 <span class="label">LinkedIn</span>
@@ -637,7 +641,7 @@
             <textarea id="message" name="message" placeholder="Your message..." rows="6" required></textarea>
           </div>
 
-          <button type="submit" class="btn-submit">
+          <button type="submit" class="btn-submit" id="submitButton">
             <span>Send Message</span>
             <i class='bx bx-send'></i>
           </button>
@@ -646,6 +650,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
@@ -653,13 +659,17 @@
         Built by Sukhampreet Sandhu
       </p>
       <div class="footer-links">
-        <a href="https://github.com/sukhampreetsandhu" target="_blank" rel="noopener noreferrer">
-          <i class="bx bxl-github"></i>
+        <a href="https://github.com/sukhampreetsandhu" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="bx bxl-github" aria-hidden="true"></i>
         </a>
-        <a href="https://www.linkedin.com/in/sukhampreetsandhu/" target="_blank" rel="noopener noreferrer">
-          <i class="bx bxl-linkedin-square"></i>
+        <a href="https://www.linkedin.com/in/sukhampreetsandhu/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="bx bxl-linkedin-square" aria-hidden="true"></i>
         </a>
       </div>
     </div>
     <p class="copyright">© 2026 All Rights Reserved</p>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

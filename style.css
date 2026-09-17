@@ -1713,3 +1713,36 @@ body.modal-open {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* =====================
+   ACCESSIBILITY & RESILIENCE
+===================== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--accent-primary);
+    outline-offset: 3px;
+}
+
+.project-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-submit:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Keep hidden modal content out of interaction until JavaScript opens it. */
+.modal[aria-hidden="true"] {
+    visibility: hidden;
+}
+
+.modal[aria-hidden="false"] {
+    visibility: visible;
+}

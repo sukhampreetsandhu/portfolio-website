@@ -1,136 +1,163 @@
-// Wait for the page to fully load before running JavaScript
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
+    // =====================
+    // MOBILE NAVIGATION
+    // =====================
+    const menuToggle = document.getElementById('menuToggle');
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.querySelector('.navbar');
 
-// =====================
-// MENU TOGGLE (Mobile Navigation)
-// =====================
-let menuToggle = document.querySelector('#menuToggle');
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
-
-menuToggle.onclick = () => {
-    const isOpen = navbar.classList.toggle('active');
-    menuIcon.classList.toggle('bx-x', isOpen);
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
-    menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-};
-
-// =====================
-// DARK MODE TOGGLE
-// =====================
-let themeToggle = document.getElementById('themeToggle');
-let themeIcon = document.getElementById('themeIcon');
-
-// Check for saved theme preference or default to light mode
-let currentTheme = localStorage.getItem('theme') || 'light';
-document.documentElement.setAttribute('data-theme', currentTheme);
-
-// Set initial icon
-if (currentTheme === 'dark') {
-    themeIcon.classList.remove('bx-moon');
-    themeIcon.classList.add('bx-sun');
-}
-
-// Toggle theme
-themeToggle.onclick = () => {
-    let theme = document.documentElement.getAttribute('data-theme');
-    
-    if (theme === 'light') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        themeIcon.classList.remove('bx-moon');
-        themeIcon.classList.add('bx-sun');
-    } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-        themeIcon.classList.remove('bx-sun');
-        themeIcon.classList.add('bx-moon');
+    function setMenuState(isOpen) {
+        if (!menuToggle || !menuIcon || !navbar) return;
+        navbar.classList.toggle('active', isOpen);
+        menuIcon.classList.toggle('bx-x', isOpen);
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+        menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
     }
-}
 
-// =====================
-// TECH STACK MODAL (Improved with smooth animations)
-// =====================
-let viewFullStackBtn = document.getElementById('viewFullStackBtn');
-let techStackModal = document.getElementById('techStackModal');
-let modalClose = document.getElementById('modalClose');
-let modalOverlay = document.getElementById('modalOverlay');
-let lastFocusedElement = null;
+    if (menuToggle && navbar) {
+        menuToggle.addEventListener('click', () => {
+            setMenuState(!navbar.classList.contains('active'));
+        });
 
-// Function to open modal with smooth animation
-function openModal() {
-    lastFocusedElement = document.activeElement;
-    techStackModal.style.display = 'flex';
-    techStackModal.setAttribute('aria-hidden', 'false');
-    // Trigger reflow to ensure animation plays
-    techStackModal.offsetHeight;
-    techStackModal.classList.add('show');
-    document.body.classList.add('modal-open');
-    modalClose.focus();
-    
-    // Add escape key listener
-    document.addEventListener('keydown', handleEscapeKey);
-}
-
-// Function to close modal with smooth animation
-function closeModal() {
-    techStackModal.classList.add('closing');
-    techStackModal.classList.remove('show');
-    
-    // Wait for animation to complete before hiding
-    setTimeout(() => {
-        techStackModal.style.display = 'none';
-        techStackModal.setAttribute('aria-hidden', 'true');
-        techStackModal.classList.remove('closing');
-        document.body.classList.remove('modal-open');
-        if (lastFocusedElement) lastFocusedElement.focus();
-    }, 300);
-    
-    // Remove escape key listener
-    document.removeEventListener('keydown', handleEscapeKey);
-}
-
-// Handle escape key press
-function handleEscapeKey(e) {
-    if (e.key === 'Escape') {
-        closeModal();
+        navbar.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => setMenuState(false));
+        });
     }
-}
 
-// Event listeners
-viewFullStackBtn.onclick = openModal;
-modalClose.onclick = closeModal;
-modalOverlay.onclick = closeModal;
+    // =====================
+    // DARK MODE
+    // =====================
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const savedTheme = localStorage.getItem('theme');
+    const currentTheme = savedTheme || 'light';
 
-// Prevent closing when clicking inside modal content
-document.querySelector('.modal-content').onclick = (e) => {
-    e.stopPropagation();
-};
+    document.documentElement.setAttribute('data-theme', currentTheme);
 
-// =====================
-// EMAIL FORM (EmailJS Integration)
-// =====================
-(function () {
-    emailjs.init("ZuvrCPIwsufChqZWG");
-})();
+    function updateThemeButton(theme) {
+        if (!themeToggle || !themeIcon) return;
+        const isDark = theme === 'dark';
+        themeIcon.classList.toggle('bx-moon', !isDark);
+        themeIcon.classList.toggle('bx-sun', isDark);
+        themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
 
-document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    
-    emailjs.sendForm(
-        "service_h3vfbym",
-        "template_6og8v1d",
-        this
-    ).then(
-        function () {
-            alert("Message sent successfully!");
-            document.getElementById("contact-form").reset();
-        },
-        function (error) {
-            alert("Failed to send message. Please try again.");
-            console.log(error);
+    updateThemeButton(currentTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const nextTheme =
+                document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', nextTheme);
+            localStorage.setItem('theme', nextTheme);
+            updateThemeButton(nextTheme);
+        });
+    }
+
+    // =====================
+    // TECH STACK MODAL
+    // =====================
+    const viewFullStackBtn = document.getElementById('viewFullStackBtn');
+    const techStackModal = document.getElementById('techStackModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalContent = techStackModal?.querySelector('.modal-content');
+    let lastFocusedElement = null;
+
+    function getFocusableElements() {
+        if (!modalContent) return [];
+        return [...modalContent.querySelectorAll(
+            'button:not([disabled]), a[href], input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )];
+    }
+
+    function handleModalKeydown(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+            return;
         }
-    );
-});
 
+        if (event.key !== 'Tab') return;
+        const focusable = getFocusableElements();
+        if (!focusable.length) {
+            event.preventDefault();
+            modalContent?.focus();
+            return;
+        }
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+        }
+    }
+
+    function openModal() {
+        if (!techStackModal) return;
+        lastFocusedElement = document.activeElement;
+        techStackModal.style.display = 'flex';
+        techStackModal.setAttribute('aria-hidden', 'false');
+        techStackModal.classList.remove('closing');
+        requestAnimationFrame(() => techStackModal.classList.add('show'));
+        document.body.classList.add('modal-open');
+        document.addEventListener('keydown', handleModalKeydown);
+        modalClose?.focus();
+    }
+
+    function closeModal() {
+        if (!techStackModal || techStackModal.getAttribute('aria-hidden') === 'true') return;
+        techStackModal.classList.add('closing');
+        techStackModal.classList.remove('show');
+        document.removeEventListener('keydown', handleModalKeydown);
+
+        window.setTimeout(() => {
+            techStackModal.style.display = 'none';
+            techStackModal.setAttribute('aria-hidden', 'true');
+            techStackModal.classList.remove('closing');
+            document.body.classList.remove('modal-open');
+            if (lastFocusedElement instanceof HTMLElement) lastFocusedElement.focus();
+        }, 300);
+    }
+
+    viewFullStackBtn?.addEventListener('click', openModal);
+    modalClose?.addEventListener('click', closeModal);
+    modalOverlay?.addEventListener('click', closeModal);
+    modalContent?.addEventListener('click', event => event.stopPropagation());
+
+    // =====================
+    // EMAIL FORM
+    // =====================
+    const contactForm = document.getElementById('contact-form');
+    const submitButton = document.getElementById('submitButton');
+
+    if (window.emailjs) {
+        emailjs.init('ZuvrCPIwsufChqZWG');
+    }
+
+    contactForm?.addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        if (!window.emailjs) {
+            alert('The contact form is temporarily unavailable. Please email me directly.');
+            return;
+        }
+
+        if (submitButton) submitButton.disabled = true;
+
+        try {
+            await emailjs.sendForm('service_h3vfbym', 'template_6og8v1d', this);
+            alert('Message sent successfully!');
+            this.reset();
+        } catch (error) {
+            alert('Failed to send message. Please try again.');
+            console.error('EmailJS error:', error);
+        } finally {
+            if (submitButton) submitButton.disabled = false;
+        }
+    });
 });
