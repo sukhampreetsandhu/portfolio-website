@@ -15,8 +15,8 @@
     /* Accent Colors */
     --accent-primary: #2563eb;
     --accent-secondary: #7c3aed;
-    --accent-success: #059669;
-    --accent-warning: #d97706;
+    --accent-success: #047857;
+    --accent-warning: #b45309;
 
     /* Text Colors */
     --text-primary: #1f2937;
@@ -25,8 +25,8 @@
 
     /* Syntax Highlighting */
     --code-keyword: #dc2626;
-    --code-string: #059669;
-    --code-var: #d97706;
+    --code-string: #047857;
+    --code-var: #b45309;
     --code-property: #2563eb;
 
     /* Borders */
@@ -93,19 +93,6 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
 }
 
 /* Custom Scrollbar */
@@ -184,15 +171,23 @@ body {
     color: var(--accent-primary);
 }
 
+.menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border: 0;
+    background: transparent;
+    color: var(--accent-primary);
+    cursor: pointer;
+}
+
 #menu-icon {
     font-size: 3rem;
-    color: var(--accent-primary);
-    display: none;
-    cursor: pointer;
     transition: transform 0.3s ease;
 }
 
-#menu-icon:hover {
+.menu-toggle:hover #menu-icon {
     transform: scale(1.1);
 }
 
@@ -356,7 +351,8 @@ section {
 }
 
 .home-content {
-    animation: fadeInLeft 1s ease-out;
+    /* Keep above-the-fold content immediately paintable for a faster LCP. */
+    animation: none;
 }
 
 @keyframes fadeInLeft {
@@ -530,7 +526,8 @@ section {
 
 /* Code Window */
 .home-visual {
-    animation: fadeInRight 1s ease-out;
+    /* Avoid delaying the initial hero paint. */
+    animation: none;
 }
 
 @keyframes fadeInRight {
@@ -1595,8 +1592,8 @@ body.modal-open {
 }
 
 @media (max-width: 768px) {
-    #menu-icon {
-        display: block;
+    .menu-toggle {
+        display: flex;
     }
 
     .theme-toggle {
@@ -1704,5 +1701,15 @@ body.modal-open {
 
     .modal-header {
         padding: 2rem;
+    }
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }

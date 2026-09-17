@@ -4,21 +4,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Computer Science student and software developer focused on systems, QA, and practical software engineering." />
-  <meta name="theme-color" content="#2563eb" />
-  <meta property="og:title" content="Sukhampreet Sandhu" />
-  <meta property="og:description" content="CS student and software developer building reliable software with a focus on systems, testing, and quality." />
   <title>Sukhampreet Sandhu — CS Student & Software Developer</title>
+  <meta name="description" content="Portfolio of Sukhampreet Sandhu, a Computer Science student and software developer focused on backend development, systems, DevOps, and software quality." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.sukhampreetsandhu.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sukhampreet Sandhu — CS Student & Software Developer" />
+  <meta property="og:description" content="Computer Science student building reliable software across backend development, systems, DevOps, and software quality." />
+  <meta property="og:url" content="https://www.sukhampreetsandhu.com/" />
+  <meta name="twitter:card" content="summary" />
+
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://unpkg.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" /></noscript>
+  <link rel="preload" as="style" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" /></noscript>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script defer src="script.js"></script>
 </head>
-<script defer src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script defer src="script.js"></script>
 
 <body>
   <!-- Terminal-style header -->
@@ -27,8 +34,10 @@
       <a href="#home" class="logo">
         <span class="terminal-prompt">~/</span>Sukhampreet
       </a>
-      <i class="bx bx-menu" id="menu-icon"></i>
-      <nav class="navbar">
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
+        <i class="bx bx-menu" id="menu-icon" aria-hidden="true"></i>
+      </button>
+      <nav class="navbar" id="primary-navigation" aria-label="Primary navigation">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
@@ -43,6 +52,7 @@
     <div class="header-line"></div>
   </header>
 
+  <main id="main-content">
   <!-- Landing Page -->
   <section class="home" id="home">
     <div class="section-content">
@@ -50,7 +60,7 @@
         <div class="home-content">
           <div class="status-badge">
             <span class="status-dot"></span>
-            Available for 2027 Winter Internships
+            Available for Winter 2027 Co-op
           </div>
 
           <h1 class="glitch-text" data-text="Sukhampreet Sandhu">
@@ -126,7 +136,8 @@
 
         <div class="about-text">
           <p>
-            Hi there! I'm a 3rd-year Computer Science student at the University of Guelph, pursuing a Bachelor of Computing in Computer Science. I'm currently seeking a software development co-op work term for Winter 2027.
+            Hi there! I'm a 3rd-year Computer Science student at the University of Guelph, pursuing a B.Sc. in Computer Science with
+            a minor in Business Data Analytics. I'm currently seeking a co-op work term for Winter 2027.
           </p>
           <p>
             I enjoy building systems that are both efficient and practical. Whether it’s designing object-oriented applications in
@@ -154,11 +165,11 @@
             <h3>Core Skills</h3>
             <div class="skill-group">
               <h4>Languages</h4>
-              <p>Java, C, Python, C#, JavaScript, HTML/CSS</p>
+              <p>Java, C, Python, HTML/CSS, JavaScript</p>
             </div>
             <div class="skill-group">
               <h4>Tools & Platforms</h4>
-              <p>Git/GitHub, Linux, Docker, Proxmox VE, Jenkins, Octopus Deploy, Cloudflare</p>
+              <p>Git, Linux, Docker, Cloudflare, Render</p>
             </div>
             <div class="skill-group">
               <h4>Concepts</h4>
@@ -166,19 +177,12 @@
             </div>
             <div class="skill-group">
               <h4>Quality Assurance</h4>
-              <p>Playwright, Regression Testing, Test Automation, Jira, Seq, Test Case Design</p>
+              <p>Regression Testing, Jira, Confluence, Test Case Design</p>
             </div>
           </div>
 
           <div class="work-terms">
             <h3>Co-op Work Terms</h3>
-            <div class="work-term-item">
-              <div class="term-badge">2</div>
-              <div class="term-info">
-                <h4>Quality Assurance Intern</h4>
-                <p>Camis Inc • Summer 2026</p>
-              </div>
-            </div>
             <div class="work-term-item">
               <div class="term-badge">1</div>
               <div class="term-info">
@@ -193,12 +197,12 @@
   </section>
 
   <!-- Full Tech Stack Modal -->
-  <div class="modal" id="techStackModal">
+  <div class="modal" id="techStackModal" role="dialog" aria-modal="true" aria-labelledby="techStackTitle" aria-hidden="true">
     <div class="modal-overlay" id="modalOverlay"></div>
     <div class="modal-content">
       <div class="modal-header">
-        <h3>Full Tech Stack</h3>
-        <button class="modal-close" id="modalClose">
+        <h3 id="techStackTitle">Full Tech Stack</h3>
+        <button class="modal-close" id="modalClose" type="button" aria-label="Close full tech stack dialog">
           <i class='bx bx-x'></i>
         </button>
       </div>
@@ -210,7 +214,6 @@
               <span>C</span>
               <span>Java</span>
               <span>Python</span>
-              <span>C#</span>
               <span>JavaScript</span>
               <span>HTML/CSS</span>
             </div>
@@ -220,8 +223,6 @@
             <div class="tech-list">
               <span>JavaFX</span>
               <span>Spring Boot</span>
-              <span>FastAPI</span>
-              <span>Playwright</span>
               <span>Firebase</span>
             </div>
           </div>
@@ -231,15 +232,10 @@
               <span>Git/GitHub/GitLab</span>
               <span>Docker</span>
               <span>Linux</span>
-              <span>Proxmox VE</span>
-              <span>Jenkins</span>
-              <span>Octopus Deploy</span>
-              <span>Nginx</span>
               <span>Cloudflare</span>
               <span>Render</span>
               <span>VS Code</span>
               <span>IntelliJ IDEA</span>
-              <span>Claude Code CLI</span>
               <span>Azure</span>
             </div>
           </div>
@@ -248,9 +244,7 @@
             <div class="tech-list">
               <span>Jira</span>
               <span>Confluence</span>
-              <span>Seq</span>
               <span>Regression Testing</span>
-              <span>Test Automation</span>
               <span>Test Case Design</span>
               <span>Bug Tracking</span>
             </div>
@@ -269,8 +263,6 @@
               <span>Data Structures</span>
               <span>Algorithms</span>
               <span>Software Testing</span>
-              <span>CI/CD</span>
-              <span>REST APIs</span>
               <span>Version Control</span>
               <span>Agile Methodologies</span>
             </div>
@@ -299,37 +291,8 @@
                 <h3>Quality Assurance Intern</h3>
                 <p class="company">Camis Inc, Guelph</p>
               </div>
-              <span class="date">May 2026 – Aug 2026</span>
-            </div>
-            <p><strong>Outstanding Performance Evaluation</strong></p>
-            <ul class="responsibilities">
-              <li>Expanded a C# Playwright automated test suite using GitHub and Claude Code CLI, developing and executing regression tests locally as the QA team transitioned toward automated testing.</li>
-              <li>Investigated application logs in Seq to reproduce and root-cause defects, including a critical production issue traced to a checkout workflow change; collaborated with the Lead Developer to isolate the defect and validate the hotfix.</li>
-              <li>Used Jenkins build results to identify versions containing fixes and deployed version updates to UAT environments using Octopus Deploy.</li>
-              <li>Owned regression and release testing across reservation workflows; triaged client UAT feedback in Jira, reproduced issues, validated fixes and edge cases, and coordinated findings with QA and client-facing teams.</li>
-            </ul>
-            <div class="tech-tags">
-              <span>C#</span>
-              <span>Playwright</span>
-              <span>Jenkins</span>
-              <span>Octopus Deploy</span>
-              <span>Seq</span>
-              <span>Jira</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="experience-card">
-            <div class="card-header">
-              <div>
-                <h3>Quality Assurance Intern</h3>
-                <p class="company">Camis Inc, Guelph</p>
-              </div>
               <span class="date">Sept 2025 – Dec 2025</span>
             </div>
-            <p><strong>Outstanding Performance Evaluation</strong></p>
             <ul class="responsibilities">
               <li>Executed manual and exploratory testing on enterprise-scale reservation and park management software
                 used by 1,300+ clients.</li>
@@ -338,12 +301,6 @@
               <li>Worked with Jira and Confluence to track issues, document test results, and support stable feature
                 releases.</li>
             </ul>
-            <div class="tech-tags">
-              <span>Jira</span>
-              <span>Confluence</span>
-              <span>Regression Testing</span>
-              <span>UAT</span>
-            </div>
           </div>
         </div>
 
@@ -355,7 +312,7 @@
                 <h3>Teaching Assistant</h3>
                 <p class="company">University of Guelph</p>
               </div>
-              <span class="date">Sept 2024 – Apr 2026</span>
+              <span class="date">Sept 2024 – Present</span>
             </div>
             <ul class="responsibilities">
               <li>Supported 500+ students across introductory and intermediate programming courses by mentoring during
@@ -383,61 +340,11 @@
       </div>
 
       <div class="projects-grid">
-        
         <div class="project-card">
           <div class="project-image">
-            <img src="images/server.png" alt="Home Server">
+            <img src="images/discussionboard-web.png" alt="Smart Discussion Board" loading="lazy" decoding="async">
             <div class="project-overlay">
-              <a href="#" class="project-link" aria-label="Home Server project">
-                <i class='bx bx-link-external'></i>
-              </a>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3>Home Server</h3>
-            <p>Built a Proxmox VE homelab to self-host applications in isolated Linux VMs and LXC containers, deploying Dockerized applications behind an Nginx reverse proxy.</p>
-            <div class="project-tech">
-              <span>Proxmox VE</span>
-              <span>Docker</span>
-              <span>Linux</span>
-              <span>Nginx</span>
-              <span>Cloudflare</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-image">
-            <img src="images/stock.png" alt="Home Page of Stock Reaction Predictor">
-            <div class="project-overlay">
-              <a href="#" class="project-link" aria-label="Home Server project">
-                <i class='bx bx-link-external'></i>
-              </a>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3>Stock Reaction Predictor</h3>
-            <p>Developed the FastAPI backend for a team-built stock reaction predictor, exposing REST endpoints that connect ticker and news inputs to a FinBERT and time-series forecasting pipeline, with multi-horizon inference and market-data retrieval.</p>
-            <div class="project-tech">
-              <span>Python</span>
-              <span>FastAPI</span>
-              <span>REST APIs</span>
-              <span>FinBERT</span>
-            </div>
-            <div class="project-overlay">
-              <a href="https://github.com/Luiza-s-classes/project-setup-group-9-cloud-9" class="project-link" target="_blank"
-                rel="noopener noreferrer" aria-label="Stock Reaction Predictor GitHub">
-                <i class='bx bx-link-external'></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-image">
-            <img src="images/discussionboard-web.png" alt="Smart Discussion Board">
-            <div class="project-overlay">
-              <a href="https://github.com/sukhampreetsandhu/discussionBoard-web" class="project-link" target="_blank"
+              <a href="https://github.com/sukhampreetsandhu/discussionBoard-web" class="project-link" aria-label="View Smart Discussion Board project on GitHub" target="_blank"
                 rel="noopener noreferrer">
                 <i class='bx bx-link-external'></i>
               </a>
@@ -459,9 +366,9 @@
 
         <div class="project-card">
           <div class="project-image">
-            <img src="images/invmanager.png" alt="Investment Manager">
+            <img src="images/invmanager.png" alt="Investment Manager" loading="lazy" decoding="async">
             <div class="project-overlay">
-              <a href="https://github.com/sukhampreetsandhu/InvestmentManager" class="project-link" target="_blank"
+              <a href="https://github.com/sukhampreetsandhu/InvestmentManager" class="project-link" aria-label="View Investment Manager project on GitHub" target="_blank"
                 rel="noopener noreferrer">
                 <i class='bx bx-link-external'></i>
               </a>
@@ -481,9 +388,9 @@
 
         <div class="project-card">
           <div class="project-image">
-            <img src="images/RentACar.png" alt="RentACar">
+            <img src="images/RentACar.png" alt="RentACar" loading="lazy" decoding="async">
             <div class="project-overlay">
-              <a href="https://github.com/sukhampreetsandhu/CarRentalManager" class="project-link" target="_blank"
+              <a href="https://github.com/sukhampreetsandhu/CarRentalManager" class="project-link" aria-label="View RentACar project on GitHub" target="_blank"
                 rel="noopener noreferrer">
                 <i class='bx bx-link-external'></i>
               </a>
@@ -501,9 +408,9 @@
         </div>
         <div class="project-card">
           <div class="project-image">
-            <img src="images/mmegmt.jpg" alt="MemoryManager">
+            <img src="images/mmegmt.jpg" alt="MemoryManager" loading="lazy" decoding="async">
             <div class="project-overlay">
-              <a href="https://github.com/sukhampreetsandhu/memoryAllocator" class="project-link" target="_blank"
+              <a href="https://github.com/sukhampreetsandhu/memoryAllocator" class="project-link" aria-label="View Memory Manager project on GitHub" target="_blank"
                 rel="noopener noreferrer">
                 <i class='bx bx-link-external'></i>
               </a>
@@ -523,9 +430,9 @@
 
         <div class="project-card">
           <div class="project-image">
-            <img src="images/knn.png" alt="Animal Bio ML">
+            <img src="images/knn.png" alt="Animal Bio ML" loading="lazy" decoding="async">
             <div class="project-overlay">
-              <a href="https://github.com/sukhampreetsandhu/AnimalBioML" class="project-link" target="_blank"
+              <a href="https://github.com/sukhampreetsandhu/AnimalBioML" class="project-link" aria-label="View Animal Bio ML project on GitHub" target="_blank"
                 rel="noopener noreferrer">
                 <i class='bx bx-link-external'></i>
               </a>
@@ -545,9 +452,9 @@
 
         <div class="project-card">
           <div class="project-image">
-            <img src="images/toDoWeb.png" alt="ToDo Web Application">
+            <img src="images/toDoWeb.png" alt="ToDo Web Application" loading="lazy" decoding="async">
             <div class="project-overlay">
-              <a href="https://github.com/sukhampreetsandhu/ToDo-WebApplication" class="project-link" target="_blank"
+              <a href="https://github.com/sukhampreetsandhu/ToDo-WebApplication" class="project-link" aria-label="View ToDo Web Application project on GitHub" target="_blank"
                 rel="noopener noreferrer">
                 <i class='bx bx-link-external'></i>
               </a>
@@ -581,7 +488,7 @@
       <div class="contact-container">
         <div class="contact-info">
           <p class="contact-intro">
-            I'm currently seeking Winter 2027 software development co-op opportunities. Whether you have a question or just want to
+            I'm currently seeking Winter 2027 co-op opportunities. Whether you have a question or just want to
             connect, feel free to reach out!
           </p>
 
@@ -603,7 +510,7 @@
               </div>
             </a>
 
-            <a href="https://github.com/sukhampreetsandhu" target="_blank" class="contact-item">
+            <a href="https://github.com/sukhampreetsandhu" target="_blank" rel="noopener noreferrer" class="contact-item">
               <i class="bx bxl-github"></i>
               <div>
                 <span class="label">GitHub</span>
@@ -611,7 +518,7 @@
               </div>
             </a>
 
-            <a href="https://www.linkedin.com/in/sukhampreetsandhu/" target="_blank" class="contact-item">
+            <a href="https://www.linkedin.com/in/sukhampreetsandhu/" target="_blank" rel="noopener noreferrer" class="contact-item">
               <i class="bx bxl-linkedin-square"></i>
               <div>
                 <span class="label">LinkedIn</span>
@@ -646,6 +553,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
@@ -653,11 +562,11 @@
         Built by Sukhampreet Sandhu
       </p>
       <div class="footer-links">
-        <a href="https://github.com/sukhampreetsandhu" target="_blank" rel="noopener noreferrer">
-          <i class="bx bxl-github"></i>
+        <a href="https://github.com/sukhampreetsandhu" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+          <i class="bx bxl-github" aria-hidden="true"></i>
         </a>
-        <a href="https://www.linkedin.com/in/sukhampreetsandhu/" target="_blank" rel="noopener noreferrer">
-          <i class="bx bxl-linkedin-square"></i>
+        <a href="https://www.linkedin.com/in/sukhampreetsandhu/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+          <i class="bx bxl-linkedin-square" aria-hidden="true"></i>
         </a>
       </div>
     </div>
